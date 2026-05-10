@@ -1,6 +1,9 @@
 import sys
 import importlib
-import importlib_metadata
+try:
+    import importlib_metadata  # type: ignore
+except ImportError:
+    import importlib.metadata as importlib_metadata
 from pathlib import Path
 import os
 # Get all the pip packages for the base path
